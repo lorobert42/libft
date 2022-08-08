@@ -6,14 +6,14 @@
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:50:56 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/07 16:55:43 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:19:12 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stddef.h>
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:34:57 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/07 18:17:50 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:34:24 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@
 int	main(int argc, char **argv)
 {
 	(void)argc;
-	printf("%d\n", ft_strncmp(argv[1], argv[2], atoi(argv[3])));
-	printf("%d\n", strncmp(argv[1], argv[2], atoi(argv[3])));
+	printf("%s\n", strchr(argv[1], argv[2][0]));
+	printf("%s\n", ft_strchr(argv[1], argv[2][0]));
 }
