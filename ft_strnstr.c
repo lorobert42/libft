@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 16:39:26 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/12 10:06:02 by lorobert         ###   ########.fr       */
+/*   Created: 2022/08/12 09:55:19 by lorobert          #+#    #+#             */
+/*   Updated: 2022/08/12 10:10:16 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isupper(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
+#include <stddef.h>
 
-static int	ft_islower(int c)
+char	*ft_strnstr(char const *big, char const *little, size_t len)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
+	size_t	i;
+	size_t	j;
 
-int	ft_isalpha(int c)
-{
-	if (ft_isupper(c) || ft_islower(c))
-		return (1);
-	return (0);
+	i = 0;
+	if (!little[i] || !len)
+		return ((char *)big);
+	while (i < len && big[i])
+	{
+		j = 0;
+		while (i + j < len && big[i + j] == little[j] && little[j])
+			j++;
+		if (!little[j])
+			return ((char *)&big[i]);
+		i++;
+	}
+	return (NULL);
 }

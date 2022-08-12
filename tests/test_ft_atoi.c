@@ -6,11 +6,13 @@
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 19:41:29 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/12 09:00:06 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/08/12 09:16:08 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
 #include "munit/munit.h"
 #include "libft.h"
 
@@ -74,6 +76,28 @@ static MunitResult	space_pos_test(const MunitParameter params[], void *data)
 	return (MUNIT_OK);
 }
 
+static MunitResult	max_test(const MunitParameter params[], void *data)
+{
+	char	nbr[20];
+	sprintf(nbr, "%d", INT_MAX);
+
+	(void)params;
+	(void)data;
+	munit_assert_int(ft_atoi(nbr), ==, atoi(nbr));
+	return (MUNIT_OK);
+}
+
+static MunitResult	min_test(const MunitParameter params[], void *data)
+{
+	char	nbr[20];
+	sprintf(nbr, "%d", INT_MIN);
+
+	(void)params;
+	(void)data;
+	munit_assert_int(ft_atoi(nbr), ==, atoi(nbr));
+	return (MUNIT_OK);
+}
+
 static MunitResult	invalid_test(const MunitParameter params[], void *data)
 {
 	char	*nbr = "--42";
@@ -91,6 +115,8 @@ static MunitTest test_suite_tests[] = {
 	{ (char *) "/space", space_test, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ (char *) "/space_neg", space_neg_test, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ (char *) "/space_pos", space_pos_test, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+	{ (char *) "/max", max_test, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
+	{ (char *) "/min", min_test, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ (char *) "/invalid", invalid_test, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL },
 	{ NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 };
