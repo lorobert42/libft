@@ -6,7 +6,7 @@
 #    By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 10:00:10 by lorobert          #+#    #+#              #
-#    Updated: 2022/08/11 10:18:18 by lorobert         ###   ########.fr        #
+#    Updated: 2022/08/12 09:03:02 by lorobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,13 @@ CFLAGS	:= -Wall -Wextra -Werror
 
 RM		:= rm -f
 
+ifeq (test,$(firstword $(MAKECMDGOALS)))
+  # use the rest as arguments for "test"
+  TEST_ARG := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  # ...and turn them into do-nothing targets
+  $(eval $(TEST_ARG):;@:)
+endif
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -30,6 +37,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
+
+test: $(NAME)
+	$(CC) $(CFLAGS) -I. ./munit/munit.c ./tests/test_$(TEST_ARG).c -L. -lft
 
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRCS)
@@ -43,4 +53,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all test clean fclean re
