@@ -6,7 +6,7 @@
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:34:57 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/08 13:53:09 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/08/12 16:17:57 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int	main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
-	printf("%d\n", ft_atoi(argv[1]));
-	printf("%d\n", atoi(argv[1]));
+	printf("%s\n", ft_itoa(atoi(argv[1])));
 }
