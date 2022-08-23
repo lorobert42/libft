@@ -6,7 +6,7 @@
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 13:09:23 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/13 13:16:55 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/08/23 10:37:31 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == INT_MIN)
 	{
 		ft_putstr_fd("-2147483648", fd);

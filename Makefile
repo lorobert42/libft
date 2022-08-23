@@ -6,7 +6,7 @@
 #    By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 10:00:10 by lorobert          #+#    #+#              #
-#    Updated: 2022/08/13 18:58:47 by lorobert         ###   ########.fr        #
+#    Updated: 2022/08/23 10:26:04 by lorobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,6 @@ CFLAGS	:= -Wall -Wextra -Werror
 
 RM		:= rm -f
 
-ifeq (test,$(firstword $(MAKECMDGOALS)))
-  # use the rest as arguments for "test"
-  TEST_ARG := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-  # ...and turn them into do-nothing targets
-  $(eval $(TEST_ARG):;@:)
-endif
-
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -39,13 +32,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-
-test: $(NAME)
-	$(CC) $(CFLAGS) -I. ./munit/munit.c ./tests/test_$(TEST_ARG).c -L. -lft
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRCS)
-	$(CC) -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
