@@ -6,7 +6,7 @@
 #    By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 10:00:10 by lorobert          #+#    #+#              #
-#    Updated: 2022/08/23 10:26:04 by lorobert         ###   ########.fr        #
+#    Updated: 2022/08/24 14:53:43 by lorobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRCS	:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_memchr.c ft_memcmp.c ft_memset.c ft_strdup.c ft_strlcpy.c ft_strlcat.c \
 	ft_strnstr.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 	ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRCSB	:= ft_lstnew.c $(SRCS)
 OBJS	:= $(SRCS:.c=.o)
+OBJSB	:= $(SRCSB:.c=.o)
 
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
@@ -32,6 +34,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
+
+bonus: $(OBJSB)
+	ar rc $(NAME) $(OBJSB)
 
 clean:
 	$(RM) $(OBJS)
