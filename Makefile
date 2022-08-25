@@ -6,7 +6,7 @@
 #    By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 10:00:10 by lorobert          #+#    #+#              #
-#    Updated: 2022/08/25 15:23:13 by lorobert         ###   ########.fr        #
+#    Updated: 2022/08/25 15:34:26 by lorobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS	:= ft_isalnum.c \
 	ft_split.c \
 	ft_itoa.c \
 	ft_strmapi.c \
+	ft_striteri.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
