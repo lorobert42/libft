@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+         #
+#    By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/08 10:00:10 by lorobert          #+#    #+#              #
-#    Updated: 2022/08/25 15:34:26 by lorobert         ###   ########.fr        #
+#    Created: 2022/10/10 14:40:57 by lorobert          #+#    #+#              #
+#    Updated: 2022/10/10 14:41:01 by lorobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ SRCS	:= ft_isalnum.c \
 	ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
-	ft_memccpy.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memchr.c \
