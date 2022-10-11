@@ -6,7 +6,7 @@
 /*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 13:58:05 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/08 14:05:23 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/11 10:07:08 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*t;
 
-	t = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		t[i] = '\0';
+		((char *)s)[i] = '\0';
 		i++;
 	}
 }
