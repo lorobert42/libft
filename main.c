@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorobert <lorobert@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 16:34:57 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/23 14:22:02 by lorobert         ###   ########.fr       */
+/*   Created: 2022/10/11 10:17:20 by lorobert          #+#    #+#             */
+/*   Updated: 2022/10/11 10:18:02 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 #include <stddef.h>
 #include "libft.h"
 
-int	main(int argc, char **argv)
+int	main()
 {
-	(void)argc;
-	(void)argv;
-	printf("%s\n", ft_substr("tripouille", 100, 1));
-	printf("%s\n", ft_substr("1", 42, 42000000));
 }
