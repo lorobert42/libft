@@ -6,7 +6,7 @@
 /*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:37:35 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/12 15:56:43 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:57:40 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stddef.h>
 #include "libft.h"
 
-size_t	ft_count_strs(char const *s, char c)
+static size_t	ft_count_strs(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;

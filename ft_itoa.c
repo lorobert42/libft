@@ -6,7 +6,7 @@
 /*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:59:07 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/12 16:28:10 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:48:49 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stddef.h>
 #include <limits.h>
 
-size_t	ft_len_nbr(long int n)
+static size_t	ft_len_nbr(long int n)
 {
 	size_t	radix;
 
@@ -27,13 +27,6 @@ size_t	ft_len_nbr(long int n)
 	return (radix);
 }
 
-int	ft_check_neg(long int n)
-{
-	if (n < 0)
-		return (1);
-	return (0);
-}
-
 char	*ft_itoa(int n)
 {
 	size_t		len;
@@ -42,7 +35,7 @@ char	*ft_itoa(int n)
 	int			neg;
 
 	ln = n;
-	neg = ft_check_neg(ln);
+	neg = ln < 0;
 	if (neg)
 		ln *= -1;
 	len = ft_len_nbr(ln);

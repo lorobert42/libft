@@ -6,7 +6,7 @@
 /*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:17:20 by lorobert          #+#    #+#             */
-/*   Updated: 2022/10/11 13:51:03 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/12 12:02:49 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,14 @@ void	print_ok(char *msg)
 
 int	main()
 {
-	// isalpha
-	printf("Testing isalpha\n");
-	for (unsigned char c = 0; c < 255; c++)
-	{
-		if ((bool)ft_isalpha(c) == (bool)isalpha(c))
-			continue ;
-		else
-		{
-			print_error(strcat(&c, "is not alpha"));
-			return (0);
-		}
-	}
-	print_ok("Everything OK");
+	// memcpy
+	printf("Testing memcpy\n");
+	if (ft_memcpy(NULL, strdup("test"), 3) == memcpy(NULL, strdup("test"), 3))
+		print_ok("NULL, test, 3");
+	else
+		print_error("NULL, test, 3");
+	if (ft_memcpy(NULL, NULL, 3) == memcpy(NULL, NULL, 3))
+		print_ok("NULL, NULL, 3");
+	else
+		print_error("NULL, NULL, 3");
 }

@@ -6,7 +6,7 @@
 /*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:41:11 by lorobert          #+#    #+#             */
-/*   Updated: 2022/10/10 14:41:13 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:08:15 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strrchr(char const *s, int c);
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
 size_t	ft_strlcpy(char *dst, char const *src, size_t size);
 size_t	ft_strlcat(char *dst, char const *src, size_t size);
-char	*ft_strnstr(char const *s, char const *find, size_t n);
+char	*ft_strnstr(char const *haystack, char const *needle, size_t n);
 int		ft_atoi(char const *nptr);
 
 // malloc allowed

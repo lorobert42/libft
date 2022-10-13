@@ -6,13 +6,11 @@
 /*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:53:53 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/07 16:55:55 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:52:28 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	return (c >= ' ' && c <= 126);
 }
