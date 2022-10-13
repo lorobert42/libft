@@ -6,7 +6,7 @@
 /*   By: lorobert <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 13:34:27 by lorobert          #+#    #+#             */
-/*   Updated: 2022/08/12 13:58:42 by lorobert         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:39:51 by lorobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ static size_t	ft_res_len(char const *s, char const *set)
 	size_t	i;
 
 	len = ft_strlen(s);
-	i = len - 1;
+	i = 0;
+	if (len)
+		i = len - 1;
 	while (ft_is_in_set(s[i], set) && len)
 	{
 		len--;
