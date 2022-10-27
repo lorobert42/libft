@@ -55,6 +55,16 @@ SRCSB	:=	ft_lstnew.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
+			ft_itoa_hex.c \
+			ft_itoa_hex_long.c \
+			ft_itoa_unsigned.c \
+			ft_printf.c \
+			ft_printf_char.c \
+			ft_printf_hex.c \
+			ft_printf_int.c \
+			ft_printf_ptr.c \
+			ft_printf_string.c \
+			ft_printf_uint.c \
 			$(SRCS)
 OBJS	:=	$(SRCS:.c=.o)
 OBJSB	:=	$(SRCSB:.c=.o)
